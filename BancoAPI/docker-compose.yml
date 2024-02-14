@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Pa55w0rd2019"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./ScriptCreateDatabase.sql:/docker-entrypoint-initdb.d/ScriptCreateDatabase.sql
+    command: ["/bin/bash", "-c", "/opt/mssql-tools/bin/sqlcmd -S db -U sa -P Pa55w0rd2019 -d master -i /docker-entrypoint-initdb.d/ScriptCreateDatabase.sql"]
+
+  
