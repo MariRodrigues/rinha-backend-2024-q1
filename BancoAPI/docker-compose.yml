@@ -30,7 +30,7 @@ services:
       - "5001:80"
     depends_on:
       - api01
-
+    
   nginx:
     image: nginx:latest
     container_name: nginx

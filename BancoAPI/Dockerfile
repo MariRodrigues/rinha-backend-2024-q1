@@ -19,4 +19,6 @@ RUN dotnet publish "BancoAPI.csproj" -c Release -o /app/publish /p:UseAppHost=fa
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "BancoAPI.dll"]
+
+# Adiciona um atraso de 10 segundos antes de iniciar a aplicação
+CMD ["sh", "-c", "sleep 10 && dotnet BancoAPI.dll"]
