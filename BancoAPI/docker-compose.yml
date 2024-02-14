@@ -25,20 +25,20 @@ services:
           cpus: "0.6"
           memory: "200MB"
 
-  # api02: 
-  #   <<: *api
-  #   hostname: api02
-  #   ports:
-  #     - "5001:80"
-  #   depends_on:
-  #     - api01
+  api02: 
+    <<: *api
+    hostname: api02
+    ports:
+      - "5001:80"
+    depends_on:
+      - api01
     
-  # nginx:
-  #   image: nginx:latest
-  #   container_name: nginx
-  #   ports:
-  #     - "9999:9999" 
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/nginx.conf
-  #   depends_on:
-  #     - api02
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "9999:9999" 
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - api02
