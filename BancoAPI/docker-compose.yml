@@ -2,13 +2,13 @@ version: '3'
 services:
 
   db:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mysql:latest
     container_name: db
     environment:
-      ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "Pa55w0rd2019"
+      MYSQL_ROOT_PASSWORD: "Pa55w0rd2019"
+      MYSQL_DATABASE: "ContaBancaria"
     ports:
-      - "1433:1433"
+      - "3307:3306"
     volumes:
       - ./ScriptCreateDatabase.sql:/docker-entrypoint-initdb.d/ScriptCreateDatabase.sql
 
