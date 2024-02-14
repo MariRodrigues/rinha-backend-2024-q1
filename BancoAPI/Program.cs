@@ -1,4 +1,3 @@
-using BancoAPI.Configurations;
 using BancoAPI.Data;
 using BancoAPI.Data.Repository;
 using BancoAPI.Domain.Interfaces;
