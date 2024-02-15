@@ -3,8 +3,8 @@
 ## 💻 Tecnologias
 - `nginx` como load balancer
 - `Mysql` como banco de dados
-- `C#` como linguagem de progração
+- `C#` como linguagem de programação
 - `.NET` framework C# 
 
 ## 🚀 Repositório
-- [repositório da api](https://github.com/MariRodrigues/rinha-backend-2024-q1)
+- [Repositório da API](https://github.com/MariRodrigues/rinha-backend-2024-q1)
